@@ -1,12 +1,12 @@
 CC=gcc
 CFLAGS =-Wall -fpic
 OBJFILES= basicClassification.o advancedClassificationLoop.o advancedClassificationRecursion.o main.o
-LIBRARYS=  libClassloops.a libClassrec.a libClassrec.so libClassloops.so
+LIBRARYS=  libclassloops.a libclassrec.a libclassrec.so libclassloops.so
 PROGRAMS: mains maindloop maindrec
-loops: libClassloops.a
-recursives: libClassrec.a
-recursived: libClassrec.so
-loopd: libClassloops.so
+loops: libclassloops.a
+recursives: libclassrec.a
+recursived: libclassrec.so
+loopd: libclassloops.so
 
 all: $(PROGRAMS) $(LIBRARYS)
 
@@ -22,26 +22,26 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c numClass.h
 main.o: main.c numClass.h
 	$(CC) -c $(CFLAGS) main.c 
 
-mains: main.o libClassrec.a
-	$(CC) $(CFLAGS) main.o -L. lClassrec -o mains
+mains: main.o libclassrec.a
+	$(CC) $(CFLAGS) main.o -L. libclassrec.a -o mains
 
-maindloop: main.o libClassloops.so
-	$(CC) $(CFLAGS) main.o ./libClassloops.so -o maindloop
+maindloop: main.o libclassloops.so
+	$(CC) $(CFLAGS) main.o ./libclassloops.so -o maindloop
 
-maindrec: main.o libClassrec.so
-	$(CC) $(CFLAGS) main.o ./libClassrec.so -o maindrec
+maindrec: main.o libclassrec.so
+	$(CC) $(CFLAGS) main.o ./libclassrec.so -o maindrec
 
-libClassloops.a: basicClassification.o advancedClassificationLoop.o
+libclassloops.a: basicClassification.o advancedClassificationLoop.o
 	$ ar rcs libClassloops.a basicClassification.o advancedClassificationLoop.o  
 
-libClassrec.a: basicClassification.o advancedClassificationRecursion.o
-	$ ar rcs libClassrec.a basicClassification.o advancedClassificationRecursion.o
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o
+	$ ar rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
 
-libClassrec.so: basicClassification.c advancedClassificationRecursion.c basicClassification.o advancedClassificationRecursion.o 
-	$(CC) $(CFLAGS) -shared -o libClassrec.so basicClassification.o advancedClassificationRecursion.o 
+libclassrec.so: basicClassification.c advancedClassificationRecursion.c basicClassification.o advancedClassificationRecursion.o 
+	$(CC) $(CFLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o 
 
-libClassloops.so: basicClassification.c advancedClassificationLoop.c basicClassification.o advancedClassificationLoop.o 
-	$(CC) $(CFLAGS) -shared -o libClassloops.so basicClassification.o advancedClassificationLoop.o 	
+libclassloops.so: basicClassification.c advancedClassificationLoop.c basicClassification.o advancedClassificationLoop.o 
+	$(CC) $(CFLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o 	
 
 clean:
 	rm -f $(LIBRARYS) $(OBJFILES) mains maindloop maindrec
