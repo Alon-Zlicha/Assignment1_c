@@ -3,7 +3,7 @@
 
 int main(){
     int num1,num2;
-    printf("Please enter two integers: \n");
+    printf("Please enter two integers: ");
     scanf("%d %d",&num1,&num2);
     int min=num1;
     int max=num2;
@@ -17,7 +17,7 @@ int main(){
             printf("%d ", i);
         }
     }
-    printf("\nThe Palindrome numbers are: ");
+    printf("\nThe Palindromes are: ");
     for(int i=min;i<=max;i++){
         if(isPalindrome(i)){
             printf("%d ", i);
@@ -35,6 +35,5 @@ int main(){
             printf("%d ", i);
         }
     }
-    printf("\n");
     return 0;
 }
