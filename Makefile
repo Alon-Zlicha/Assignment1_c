@@ -23,7 +23,7 @@ main.o: main.c numClass.h
 	$(CC) -c $(CFLAGS) main.c 
 
 mains: main.o libClassrec.a
-	$(CC) $(CFLAGS) main.o -L. libClassrec.a -o mains
+	$(CC) $(CFLAGS) main.o -L. lClassrec -o mains
 
 maindloop: main.o libClassloops.so
 	$(CC) $(CFLAGS) main.o ./libClassloops.so -o maindloop
