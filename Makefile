@@ -8,7 +8,7 @@ recursives: libclassrec.a
 recursived: libclassrec.so
 loopd: libclassloops.so
 
-all: $(PROGRAMS) recursived loopd
+all: $(PROGRAMS) recursives loops
 
 basicClassification.o: basicClassification.c numClass.h
 	$(CC) -c $(CFLAGS) basicClassification.c 
