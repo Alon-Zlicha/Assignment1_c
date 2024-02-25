@@ -14,25 +14,25 @@ int main(){
     printf("The Armstrong numbers are:");
     for(int i=min;i<=max;i++){
         if(isArmstrong(i)){
-            printf(" %d ", i);
+            printf(" %d", i);
         }
     }
     printf("\nThe Palindromes are:");
     for(int i=min;i<=max;i++){
         if(isPalindrome(i)){
-            printf(" %d ", i);
+            printf(" %d", i);
         }
     }
     printf("\nThe prime numbers are:");
     for(int i=min;i<=max;i++){
         if(isPrime(i)){
-            printf(" %d ", i);
+            printf(" %d", i);
         }
     }
     printf("\nThe strong numbers are:");
     for(int i=min;i<=max;i++){
         if(isStrong(i)){
-            printf(" %d ", i);
+            printf(" %d", i);
         }
     }
     return 0;
