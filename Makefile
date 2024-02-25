@@ -23,7 +23,7 @@ main.o: main.c numClass.h
 	$(CC) -c $(CFLAGS) main.c 
 
 mains: main.o libClassrec.a
-	$(CC) $(CFLAGS) main.o libClassrec.a -o mains
+	$(CC) $(CFLAGS) main.o -L. libClassrec.a -o mains
 
 maindloop: main.o libClassloops.so
 	$(CC) $(CFLAGS) main.o ./libClassloops.so -o maindloop
@@ -32,10 +32,10 @@ maindrec: main.o libClassrec.so
 	$(CC) $(CFLAGS) main.o ./libClassrec.so -o maindrec
 
 libClassloops.a: basicClassification.o advancedClassificationLoop.o
-	$ ar -rc libClassloops.a basicClassification.o advancedClassificationLoop.o  
+	$ ar rcs libClassloops.a basicClassification.o advancedClassificationLoop.o  
 
 libClassrec.a: basicClassification.o advancedClassificationRecursion.o
-	$ ar -rc libClassrec.a basicClassification.o advancedClassificationRecursion.o
+	$ ar rcs libClassrec.a basicClassification.o advancedClassificationRecursion.o
 
 libClassrec.so: basicClassification.c advancedClassificationRecursion.c basicClassification.o advancedClassificationRecursion.o 
 	$(CC) $(CFLAGS) -shared -o libClassrec.so basicClassification.o advancedClassificationRecursion.o 
