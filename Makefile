@@ -32,7 +32,7 @@ maindrec: main.o libclassrec.so
 	$(CC) $(CFLAGS) main.o ./libclassrec.so -o maindrec
 
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
-	$ ar rcs libClassloops.a basicClassification.o advancedClassificationLoop.o ranlib libclassrec.a
+	$ ar rcs libClassloops.a basicClassification.o advancedClassificationLoop.o 
 
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$ ar rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
