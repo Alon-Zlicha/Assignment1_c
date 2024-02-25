@@ -34,7 +34,6 @@ maindrec: main.o libclassrec.so
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
 	$ ar rcs libClassloops.a basicClassification.o advancedClassificationLoop.o ranlib libclassrec.a
 
-
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$ ar rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
 
