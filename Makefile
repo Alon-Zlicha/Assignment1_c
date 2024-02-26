@@ -8,7 +8,7 @@ recursives: libClassrec.a
 recursived: libClassrec.so
 loopd: libClassloops.so
 
-all: $(LIBRARYS) $(PROGRAMS)
+all: $(PROGRAMS) loops recursives
 
 basicClassification.o: basicClassification.c numClass.h
 	$(CC) -c $(CFLAGS) basicClassification.c 
@@ -21,7 +21,7 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c numClass.h
 
 main.o: main.c numClass.h
 	$(CC) -c $(CFLAGS) main.c 
-
+	
 mains: main.o libClassrec.a
 	$(CC) $(CFLAGS) main.o -lClassrec -L. -o mains
 
@@ -45,7 +45,5 @@ libClassloops.so: basicClassification.c advancedClassificationLoop.c basicClassi
 
 clean:
 	rm -f $(LIBRARYS) $(OBJFILES) mains maindloop maindrec
-
+	
 .PHONY:clean all loops recursives recursived loopd
-
-
