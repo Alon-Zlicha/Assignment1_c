@@ -37,10 +37,10 @@ libclassloops.a: basicClassification.o advancedClassificationLoop.o
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	ar -rc libclassrec.a basicClassification.o advancedClassificationRecursion.o
 
-libclassrec.so: basicClassification.o advancedClassificationRecursion.o 
+libclassrec.so: basicClassification.c advancedClassificationRecursion.c basicClassification.o advancedClassificationRecursion.o 
 	$(CC) $(CFLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o 
 
-libclassloops.so: basicClassification.o advancedClassificationLoop.o 
+libclassloops.so: basicClassification.c advancedClassificationLoop.c  basicClassification.o advancedClassificationLoop.o 
 	$(CC) $(CFLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o 	
 
 clean:
