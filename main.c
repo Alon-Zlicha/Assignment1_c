@@ -3,7 +3,7 @@
 
 int main(){
     int num1,num2;
-    printf("Please enter two integers: \n");
+    printf("Please enter two integers:");
     scanf("%d %d",&num1,&num2);
     int min=num1;
     int max=num2;
@@ -11,30 +11,29 @@ int main(){
         min=num2;
         max=num1;
     }
-    printf("The Armstrong numbers are: ");
+    printf("The Armstrong numbers are:");
     for(int i=min;i<=max;i++){
         if(isArmstrong(i)){
-            printf("%d ", i);
+            printf(" %d", i);
         }
     }
-    printf("\nThe Palindrome numbers are: ");
+    printf("\nThe Palindromes are:");
     for(int i=min;i<=max;i++){
         if(isPalindrome(i)){
-            printf("%d ", i);
+            printf(" %d", i);
         }
     }
-    printf("\nThe prime numbers are: ");
+    printf("\nThe Prime numbers are:");
     for(int i=min;i<=max;i++){
         if(isPrime(i)){
-            printf("%d ", i);
+            printf(" %d", i);
         }
     }
-    printf("\nThe strong numbers are: ");
+    printf("\nThe Strong numbers are:");
     for(int i=min;i<=max;i++){
         if(isStrong(i)){
-            printf("%d ", i);
+            printf(" %d", i);
         }
     }
-    printf("\n");
     return 0;
 }

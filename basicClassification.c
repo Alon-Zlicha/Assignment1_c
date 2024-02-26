@@ -1,7 +1,7 @@
 #include "numClass.h"
 
 int isPrime(int num){
-    if(num<=1){
+    if(num==0){
         return 0;
     }
     int i=2;
