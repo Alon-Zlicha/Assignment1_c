@@ -11,7 +11,7 @@ int main(){
         min=num2;
         max=num1;
     }
-    printf("The Armstrong numbers are:");
+    printf("\nThe Armstrong numbers are:");
     for(int i=min;i<=max;i++){
         if(isArmstrong(i)){
             printf(" %d", i);
