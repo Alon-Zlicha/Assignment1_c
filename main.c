@@ -3,7 +3,6 @@
 
 int main(){
     int num1,num2;
-    printf("Please enter two integers:");
     scanf("%d %d",&num1,&num2);
     int min=num1;
     int max=num2;
